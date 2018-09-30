@@ -27,7 +27,15 @@ import com.ctre.phoenix.motorcontrol.can.*;;
 
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+/*
+Notes for Enson, 9/30/2018
 
+Talons 6 and 7 are the LEFT DRIVE TALONS
+Talons 3 and 5 are the RIGHT DRIVE TALONS
+
+There's a method specifically named TankDrive that you can change to add more talons if need be
+
+*/
 
 public class Robot extends IterativeRobot {
 	
@@ -68,6 +76,7 @@ public class Robot extends IterativeRobot {
 	
 	// Joysticks are done similarly to talons, with IDs being based off of the Driver Station instead
 	public Joystick gamepad1 = new Joystick(0);
+	public Joystick stick2 = new Joystick(1);
 	public Compressor cp = new Compressor();
 	//public DoubleSolenoid ClawSolenoid = new DoubleSolenoid(0, 0, 1);
 	public Solenoid ScaleSolenoid = new Solenoid(1,0);
@@ -151,6 +160,15 @@ public class Robot extends IterativeRobot {
 	
 	public void disabledPeriodic() {
 		StopRobot();
+	}
+	
+	public void TankDrive() {
+		double leftInput = 0.70 * gamepad1.getY();
+		double rightInput = 0.70 * stick1.getY();
+		talon6.set(ControlMode.PercentOutput, leftInput); // Left motor
+		talon7.set(ControlMode.PercentOutput, leftInput); // Left motor
+		talon3.set(ControlMode.PercentOutput, rightInput); // Right motor
+		talon5.set(ControlMode.PercentOutput, rightInput); // Right motor
 	}
 
 	////////////////////////////////
@@ -434,14 +452,15 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void teleopPeriodic() {
-		Drive();
-		Flipper();
+		//Drive();
+		//Flipper();
 		//Winch();
 		//StickControl();
-		ClawControl();
-		dataCentre();
-		ScaleClaw();
-		IntakeMotors();
+		//ClawControl();
+		//dataCentre();
+		//ScaleClaw();
+		//IntakeMotors();
+		TankDrive();
 	}
 
 	public void testInit() {
