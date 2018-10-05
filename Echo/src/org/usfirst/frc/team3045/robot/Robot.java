@@ -433,11 +433,11 @@ public class Robot extends IterativeRobot {
 				double mag = Math.sqrt(Math.pow(LstickX, 2) + Math.pow(LstickY, 2));
 				double rho = Math.pow(mag,1);
 				
-				System.out.println("Drive speed: " + rho);
-				System.out.println("Vector magnitude: " + mag);
+				//System.out.println("Drive speed: " + rho);
+				//System.out.println("Vector magnitude: " + mag);
 				System.out.println("X-axis: " + LstickX);
 				System.out.println("Y-axis: " + LstickY);
-				System.out.println("Angle: " + phi);
+				//System.out.println("Angle: " + phi);
 				
 				// Phi is the angle the stick input makes with the immediate right vector, from pi to -pi
 				// Rho is the magnitude of the vector created by the stick input, and governs how fast the robot will move.
@@ -445,7 +445,7 @@ public class Robot extends IterativeRobot {
 				
 				
 				//driveTrain.drivePolar(rho, phi, 0); //2*(RstickX-.5)
-				driveTrain.driveCartesian(LstickX, LstickY, 0);
+				//driveTrain.driveCartesian(LstickX, LstickY, 0);
 				
 	}
 	
