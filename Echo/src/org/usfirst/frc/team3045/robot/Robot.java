@@ -276,14 +276,14 @@ public class Robot extends IterativeRobot {
 		} else if (dpadInput == 90) {
 			// Bottom right and top left wheel go full
 			talon1.set(ControlMode.PercentOutput, 1);
-			talon0.set(ControlMode.PercentOutput, 1);
-			talon5.set(ControlMode.PercentOutput, -1);
+			talon0.set(ControlMode.PercentOutput, -1);
+			talon5.set(ControlMode.PercentOutput, 1);
 			talon4.set(ControlMode.PercentOutput, -1);
 		} else if (dpadInput == 270) {
 			// Bottom right and top left wheel go full
 			talon1.set(ControlMode.PercentOutput, -1);
-			talon0.set(ControlMode.PercentOutput, -1);
-			talon5.set(ControlMode.PercentOutput, 1);
+			talon0.set(ControlMode.PercentOutput, 1);
+			talon5.set(ControlMode.PercentOutput, -1);
 			talon4.set(ControlMode.PercentOutput, 1);
 		} else if (dpadInput == 45) {
 			// Bottom right and top left wheel go full, rest 0
