@@ -164,7 +164,7 @@ public class Robot extends IterativeRobot {
 	
 	public void TankDrive() {
 		double leftInput = 0.70 * gamepad1.getY();
-		double rightInput = 0.70 * stick1.getY();
+		double rightInput = 0.70 * stick2.getY();
 		talon6.set(ControlMode.PercentOutput, leftInput); // Left motor
 		talon7.set(ControlMode.PercentOutput, leftInput); // Left motor
 		talon3.set(ControlMode.PercentOutput, rightInput); // Right motor
