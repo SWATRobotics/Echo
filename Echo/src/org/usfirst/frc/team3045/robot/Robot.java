@@ -263,62 +263,62 @@ public class Robot extends IterativeRobot {
 		//double throttleStick = gamepad1.getRawAxis(5);
 		if (dpadInput == 180 ) {
 			// BACKWARD
-			talon6.set(ControlMode.PercentOutput,-1);
-			talon7.set(ControlMode.PercentOutput,-1);
+			talon1.set(ControlMode.PercentOutput,-1);
+			talon0.set(ControlMode.PercentOutput,-1);
 			talon5.set(ControlMode.PercentOutput,-1);
-			talon3.set(ControlMode.PercentOutput,-1);	
+			talon4.set(ControlMode.PercentOutput,-1);	
 		} else if (dpadInput == 0) {
 			// FORWARD
-			talon6.set(ControlMode.PercentOutput, 1);
-			talon7.set(ControlMode.PercentOutput, 1);
+			talon1.set(ControlMode.PercentOutput, 1);
+			talon0.set(ControlMode.PercentOutput, 1);
 			talon5.set(ControlMode.PercentOutput, 1);
-			talon3.set(ControlMode.PercentOutput, 1);
+			talon4.set(ControlMode.PercentOutput, 1);
 		} else if (dpadInput == 90) {
 			// Bottom right and top left wheel go full
-			talon6.set(ControlMode.PercentOutput, -1);
-			talon7.set(ControlMode.PercentOutput, 1);
+			talon1.set(ControlMode.PercentOutput, -1);
+			talon0.set(ControlMode.PercentOutput, 1);
 			talon5.set(ControlMode.PercentOutput, 1);
-			talon3.set(ControlMode.PercentOutput, -1);
+			talon4.set(ControlMode.PercentOutput, -1);
 		} else if (dpadInput == 270) {
 			// Bottom right and top left wheel go full
-			talon6.set(ControlMode.PercentOutput, 1);
-			talon7.set(ControlMode.PercentOutput, -1);
+			talon1.set(ControlMode.PercentOutput, 1);
+			talon0.set(ControlMode.PercentOutput, -1);
 			talon5.set(ControlMode.PercentOutput, -1);
-			talon3.set(ControlMode.PercentOutput, 1);
+			talon4.set(ControlMode.PercentOutput, 1);
 		} else if (dpadInput == 45) {
 			// Bottom right and top left wheel go full, rest 0
-			talon6.set(ControlMode.PercentOutput, 0);
-			talon7.set(ControlMode.PercentOutput, 1);
+			talon1.set(ControlMode.PercentOutput, 0);
+			talon0.set(ControlMode.PercentOutput, 1);
 			talon5.set(ControlMode.PercentOutput, 1);
-			talon3.set(ControlMode.PercentOutput, 0);
+			talon4.set(ControlMode.PercentOutput, 0);
 		} else if (dpadInput == 315) {
 			// Bottom left and top right wheel go full, rest 0
-			talon6.set(ControlMode.PercentOutput, 1);
-			talon7.set(ControlMode.PercentOutput, 0);
+			talon1.set(ControlMode.PercentOutput, 1);
+			talon0.set(ControlMode.PercentOutput, 0);
 			talon5.set(ControlMode.PercentOutput, 0);
-			talon3.set(ControlMode.PercentOutput, 1);
+			talon4.set(ControlMode.PercentOutput, 1);
 		} else if (dpadInput == 225) {
 			// Bottom right and top left wheel go full -, rest 0
-			talon6.set(ControlMode.PercentOutput, 0);
-			talon7.set(ControlMode.PercentOutput, -1);
+			talon1.set(ControlMode.PercentOutput, 0);
+			talon0.set(ControlMode.PercentOutput, -1);
 			talon5.set(ControlMode.PercentOutput, -1);
-			talon3.set(ControlMode.PercentOutput, 0);
+			talon4.set(ControlMode.PercentOutput, 0);
 		} else if (dpadInput == 135) {
 			// Bottom left and top right wheel go full -, rest 0
-			talon6.set(ControlMode.PercentOutput, -1);
-			talon7.set(ControlMode.PercentOutput, 0);
+			talon1.set(ControlMode.PercentOutput, -1);
+			talon0.set(ControlMode.PercentOutput, 0);
 			talon5.set(ControlMode.PercentOutput, 0);
-			talon3.set(ControlMode.PercentOutput, -1);
+			talon4.set(ControlMode.PercentOutput, -1);
 		} else if (lTrigger > 0) { // Turning
-			talon6.set(ControlMode.PercentOutput, -lTrigger);
-			talon7.set(ControlMode.PercentOutput, lTrigger);
-			talon3.set(ControlMode.PercentOutput, lTrigger);
-			talon5.set(ControlMode.PercentOutput, -lTrigger);
+			talon1.set(ControlMode.PercentOutput, -lTrigger);
+			talon0.set(ControlMode.PercentOutput, lTrigger);
+			talon5.set(ControlMode.PercentOutput, lTrigger);
+			talon4.set(ControlMode.PercentOutput, -lTrigger);
 		} else if (rTrigger > 0) {
-			talon6.set(ControlMode.PercentOutput, rTrigger);
-			talon7.set(ControlMode.PercentOutput, -rTrigger);
-			talon3.set(ControlMode.PercentOutput, -rTrigger);
-			talon5.set(ControlMode.PercentOutput, rTrigger);
+			talon1.set(ControlMode.PercentOutput, rTrigger);
+			talon0.set(ControlMode.PercentOutput, -rTrigger);
+			talon5.set(ControlMode.PercentOutput, -rTrigger);
+			talon4.set(ControlMode.PercentOutput, rTrigger);
 		} else {
 			StopRobot();
 		}
@@ -417,8 +417,9 @@ public class Robot extends IterativeRobot {
 		// Gets the input of each stick axis individually. At rest, both sticks sit at (0.5,0.5)
 		//talon0.setInverted(true);
 		
+		
 				double LstickX = gamepad1.getRawAxis(0);
-				double LstickY = gamepad1.getRawAxis(1);
+				double LstickY = -1 * gamepad1.getRawAxis(1);
 				double RstickX = gamepad1.getRawAxis(4);
 				double RstickY = gamepad1.getRawAxis(5);
 				
