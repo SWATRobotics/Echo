@@ -383,7 +383,7 @@ public class Robot extends IterativeRobot {
 		double throttle = -1 * gamepad1.getRawAxis(5);
 		System.out.println(throttle);
 		//double throttleFunc = Math.pow((.5-throttle)+.5, 3);
-		talon3.set(ControlMode.PercentOutput, throttle);	
+		talon6.set(ControlMode.PercentOutput, throttle);	
 	}
 	
 	public void ScaleClaw() {
