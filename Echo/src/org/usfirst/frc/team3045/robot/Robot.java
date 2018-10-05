@@ -263,14 +263,14 @@ public class Robot extends IterativeRobot {
 		//double throttleStick = gamepad1.getRawAxis(5);
 		if (dpadInput == 180 ) {
 			// BACKWARD
-			talon1.set(ControlMode.PercentOutput,-1);
-			talon0.set(ControlMode.PercentOutput,-1);
+			talon1.set(ControlMode.PercentOutput,1);
+			talon0.set(ControlMode.PercentOutput,1);
 			talon5.set(ControlMode.PercentOutput,-1);
 			talon4.set(ControlMode.PercentOutput,-1);	
 		} else if (dpadInput == 0) {
 			// FORWARD
-			talon1.set(ControlMode.PercentOutput, 1);
-			talon0.set(ControlMode.PercentOutput, 1);
+			talon1.set(ControlMode.PercentOutput, -1);
+			talon0.set(ControlMode.PercentOutput, -1);
 			talon5.set(ControlMode.PercentOutput, 1);
 			talon4.set(ControlMode.PercentOutput, 1);
 		} else if (dpadInput == 90) {
