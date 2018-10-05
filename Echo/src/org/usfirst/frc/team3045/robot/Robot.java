@@ -310,14 +310,14 @@ public class Robot extends IterativeRobot {
 			talon5.set(ControlMode.PercentOutput, 0);
 			talon4.set(ControlMode.PercentOutput, -1);
 		} else if (lTrigger > 0) { // Turning
-			talon1.set(ControlMode.PercentOutput, -lTrigger);
+			talon1.set(ControlMode.PercentOutput, lTrigger);
 			talon0.set(ControlMode.PercentOutput, lTrigger);
-			talon5.set(ControlMode.PercentOutput, lTrigger);
+			talon5.set(ControlMode.PercentOutput, -lTrigger);
 			talon4.set(ControlMode.PercentOutput, -lTrigger);
 		} else if (rTrigger > 0) {
-			talon1.set(ControlMode.PercentOutput, rTrigger);
+			talon1.set(ControlMode.PercentOutput, -rTrigger);
 			talon0.set(ControlMode.PercentOutput, -rTrigger);
-			talon5.set(ControlMode.PercentOutput, -rTrigger);
+			talon5.set(ControlMode.PercentOutput, rTrigger);
 			talon4.set(ControlMode.PercentOutput, rTrigger);
 		} else {
 			StopRobot();
