@@ -47,14 +47,14 @@ public class Robot extends IterativeRobot {
 	public WPI_TalonSRX talon0 = new WPI_TalonSRX(0);
 	public WPI_TalonSRX talon1 = new WPI_TalonSRX(1);
 	public WPI_TalonSRX talon2 = new WPI_TalonSRX(2);
-	public WPI_TalonSRX talon3 = new WPI_TalonSRX(6);
+	public WPI_TalonSRX talon3 = new WPI_TalonSRX(3);
 	public WPI_TalonSRX talon4 = new WPI_TalonSRX(4);
-	public WPI_TalonSRX talon5 = new WPI_TalonSRX(7);
-	public WPI_TalonSRX talon6 = new WPI_TalonSRX(5);
-	public WPI_TalonSRX talon7 = new WPI_TalonSRX(3);
+	public WPI_TalonSRX talon5 = new WPI_TalonSRX(5);
+	public WPI_TalonSRX talon6 = new WPI_TalonSRX(6);
+	public WPI_TalonSRX talon7 = new WPI_TalonSRX(7);
 	
 	// This is only for driving the robot with the control sticks. Auton and other stuff just writes to the talons directly
-	public MecanumDrive driveTrain = new MecanumDrive(talon5, talon6, talon3, talon7);
+	public MecanumDrive driveTrain = new MecanumDrive(talon5, talon4, talon1, talon0);
 	
 	// Auton values
 	public String gameData = new String();
@@ -344,14 +344,14 @@ public class Robot extends IterativeRobot {
 		boolean bButton = gamepad1.getRawButton(2);
 		boolean yButton = gamepad1.getRawButton(4);
 		if (yButton && !bButton) {
-			talon0.set(ControlMode.PercentOutput, -.5);
-			talon1.set(ControlMode.PercentOutput, -.5);
+			talon2.set(ControlMode.PercentOutput, -.5);
+			talon6.set(ControlMode.PercentOutput, -.5);
 		} else if (!yButton && bButton) {
-			talon0.set(ControlMode.PercentOutput, 1);
-			talon1.set(ControlMode.PercentOutput, 1);
+			talon2.set(ControlMode.PercentOutput, 1);
+			talon6.set(ControlMode.PercentOutput, 1);
 		} else {
-			talon0.set(ControlMode.PercentOutput, 0);
-			talon1.set(ControlMode.PercentOutput, 0);
+			talon2.set(ControlMode.PercentOutput, 0);
+			talon6.set(ControlMode.PercentOutput, 0);
 		}
 	}
 	
@@ -381,14 +381,14 @@ public class Robot extends IterativeRobot {
 		double throttle = gamepad1.getRawAxis(5);
 		double throttleFunc = Math.pow((.5-throttle)+.5, 3);
 		if (rBumper && !lBumper) {
-			talon4.set(ControlMode.PercentOutput, -throttleFunc);
-			talon2.set(ControlMode.PercentOutput, -throttleFunc);
+			talon3.set(ControlMode.PercentOutput, -throttleFunc);
+			//talon2.set(ControlMode.PercentOutput, -throttleFunc);
 		} else if (!rBumper && lBumper) {
-				talon4.set(ControlMode.PercentOutput, 1);
-				talon2.set(ControlMode.PercentOutput, 1);
+				talon3.set(ControlMode.PercentOutput, 1);
+				//talon2.set(ControlMode.PercentOutput, 1);
 		} else {
-				talon4.set(ControlMode.PercentOutput, 0);
-				talon2.set(ControlMode.PercentOutput, 0);
+				talon3.set(ControlMode.PercentOutput, 0);
+				//talon2.set(ControlMode.PercentOutput, 0);
 		}
 		
 	}
