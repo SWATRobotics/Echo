@@ -67,7 +67,7 @@ public class Robot extends IterativeRobot {
 	
 	//Cameras
 	public UsbCamera cam1;
-	//public UsbCamera cam2 = new UsbCamera("Climb Camera", 1);
+	public UsbCamera cam2;
 	
 	public CameraServer camServer = CameraServer.getInstance();	
 	
@@ -102,11 +102,16 @@ public class Robot extends IterativeRobot {
 		FlipperOut.set(Value.kForward);
 		FlipperIn.set(Value.kReverse);
 		
+		
+		/* COPYPASTE THIS
 		cam1 = new UsbCamera("CAMERA", 0);
+		cam2 = new UsbCamera("Cam2", 1);
 		
 		camServer.addCamera(cam1);
 		camServer.startAutomaticCapture(cam1);
-		//camServer.addCamera(cam2);
+		camServer.addCamera(cam2);
+		camServer.startAutomaticCapture(cam2);
+		*/
 		
 		// Limits the output current of each talon
 		/*
