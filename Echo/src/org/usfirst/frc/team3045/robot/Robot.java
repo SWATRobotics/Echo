@@ -376,13 +376,13 @@ public class Robot extends IterativeRobot {
 	public void Winch() {
 		//boolean xButton = gamepad1.getRawButton(2);
 		//boolean yButton = gamepad1.getRawButton(3);
-		boolean rBumper = gamepad1.getRawButton(6);
-		boolean lBumper = gamepad1.getRawButton(5);
+		//boolean rBumper = gamepad1.getRawButton(6);
+		//boolean lBumper = gamepad1.getRawButton(5);
 		//double add = 0.1;
 		//double rTrigger = Math.pow(gamepad1.getRawAxis(3),1);
 		double throttle = -1 * gamepad1.getRawAxis(5);
-		double throttleFunc = Math.pow((.5-throttle)+.5, 3);
-		talon3.set(ControlMode.PercentOutput, throttleFunc);	
+		//double throttleFunc = Math.pow((.5-throttle)+.5, 3);
+		talon3.set(ControlMode.PercentOutput, throttle);	
 	}
 	
 	public void ScaleClaw() {
