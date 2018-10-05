@@ -405,7 +405,7 @@ public class Robot extends IterativeRobot {
 	}
 	
 	public void PushThing() {
-		boolean pushButton = gamepad1.getRawButton(0); // MAKE THIS THE BUTTON YOU WANT TO PUSH THE THINGY
+		boolean pushButton = gamepad1.getRawButton(3); // MAKE THIS THE BUTTON YOU WANT TO PUSH THE THINGY
 		if (pushButton) {
 			PushSolenoid.set(true);
 		} else {
@@ -444,8 +444,8 @@ public class Robot extends IterativeRobot {
 				
 				
 				
-				driveTrain.drivePolar(rho, phi, 0); //2*(RstickX-.5)
-				//driveTrain.driveCartesian(xInput, yInput, 0);
+				//driveTrain.drivePolar(rho, phi, 0); //2*(RstickX-.5)
+				driveTrain.driveCartesian(xInput, yInput, 0);
 				
 	}
 	
