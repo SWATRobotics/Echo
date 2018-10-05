@@ -79,13 +79,15 @@ public class Robot extends IterativeRobot {
 	public Joystick stick2 = new Joystick(1);
 	public Compressor cp = new Compressor();
 	//public DoubleSolenoid ClawSolenoid = new DoubleSolenoid(0, 0, 1);
-	public Solenoid ScaleSolenoid = new Solenoid(1,0);
-	public Solenoid IntakeSolenoid = new Solenoid(1,1);
+	public Solenoid ScaleSolenoid = new Solenoid(0,0);
+	public Solenoid IntakeSolenoid = new Solenoid(0,1);
 	public DoubleSolenoid FlipperIn = new DoubleSolenoid(0,4,5);
 	public DoubleSolenoid FlipperOut = new DoubleSolenoid(0,6,7);
 	public DriverStation driverStation = DriverStation.getInstance();
 	public SmartDashboard shuffleBoard = new SmartDashboard();
 	public RobotController robotControl;
+	
+	public Solenoid PushSolenoid = new Solenoid(0,3);
 	
 	//
 	public String side = "Left"; // USE THIS FOR AUTON SIDE!
@@ -399,6 +401,15 @@ public class Robot extends IterativeRobot {
 			ScaleSolenoid.set(true);
 		} else {
 			ScaleSolenoid.set(false);
+		}
+	}
+	
+	public void PushThing() {
+		boolean pushButton = gamepad1.getRawButton(0); // MAKE THIS THE BUTTON YOU WANT TO PUSH THE THINGY
+		if (pushButton) {
+			PushSolenoid.set(true);
+		} else {
+			PushSolenoid.set(false);
 		}
 	}
 	
