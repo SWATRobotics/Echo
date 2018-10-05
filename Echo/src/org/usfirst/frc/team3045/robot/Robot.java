@@ -404,8 +404,8 @@ public class Robot extends IterativeRobot {
 	
 	public void StickControl() {
 		// Gets the input of each stick axis individually. At rest, both sticks sit at (0.5,0.5)
-		talon5.setInverted(true);
-		talon6.setInverted(true);
+		talon0.setInverted(true);
+		//talon6.setInverted(true);
 		
 				double LstickX = gamepad1.getRawAxis(0);
 				double LstickY = gamepad1.getRawAxis(1);
