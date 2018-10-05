@@ -425,7 +425,7 @@ public class Robot extends IterativeRobot {
 				// The angle and quadrant of the left stick position is determined. This is used to determine which wheels to run in which direction to allow direct circular movement
 				String quadrant = new String();
 				double xInput = -2*(LstickX-.5);
-				double yInput = 2*(LstickY-.5);
+				double yInput = -2*(LstickY-.5);
 				double rotInput = 2*(RstickX)-.5;
 				double phi = Math.atan2(yInput, xInput);
 				phi = phi + (Math.PI);
@@ -445,7 +445,7 @@ public class Robot extends IterativeRobot {
 				
 				
 				//driveTrain.drivePolar(rho, phi, 0); //2*(RstickX-.5)
-				//driveTrain.driveCartesian(xInput, yInput, 0);
+				driveTrain.driveCartesian(xInput, yInput, 0);
 				
 	}
 	
@@ -484,7 +484,7 @@ public class Robot extends IterativeRobot {
 		dataCentre();
 		//IntakeMotors();
 		StickControl();
-		Drive();
+		//Drive();
 	}
 }
 
