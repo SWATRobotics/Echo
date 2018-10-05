@@ -445,7 +445,7 @@ public class Robot extends IterativeRobot {
 				
 				
 				//driveTrain.drivePolar(rho, phi, 0); //2*(RstickX-.5)
-				driveTrain.driveCartesian(xInput, yInput, 0);
+				driveTrain.driveCartesian(LstickX, LstickY, 0);
 				
 	}
 	
