@@ -381,6 +381,7 @@ public class Robot extends IterativeRobot {
 		//double add = 0.1;
 		//double rTrigger = Math.pow(gamepad1.getRawAxis(3),1);
 		double throttle = -1 * gamepad1.getRawAxis(5);
+		System.out.println(throttle);
 		//double throttleFunc = Math.pow((.5-throttle)+.5, 3);
 		talon3.set(ControlMode.PercentOutput, throttle);	
 	}
